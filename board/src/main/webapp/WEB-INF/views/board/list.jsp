@@ -20,7 +20,18 @@
 	        </tr>
 		</thead>
 		<tbody>
-		
+			
+			<!-- list 받아오기 -->
+			<c:forEach items = "${list}" var = "list">
+				<tr>
+					<td>${list.idx }</td>
+					<td>${list.idx }</td>
+					<td>${list.idx }</td>					
+					<td>${list.idx }</td>
+				</tr>
+			
+			
+			</c:forEach>
 		
 		</tbody>
     </table>
