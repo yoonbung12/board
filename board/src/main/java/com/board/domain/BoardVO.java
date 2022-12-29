@@ -14,17 +14,19 @@ public class BoardVO {
 		    primary key(idx)
 		);
 */	
-	private int idx;
+	private int bno;
 	private String title;
 	private String content;
 	private String writer;
 	private Date regdate;
 	private int viewcnt;
-	public int getIdx() {
-		return idx;
+	
+	
+	public int getBno() {
+		return bno;
 	}
-	public void setIdx(int idx) {
-		this.idx = idx;
+	public void setBno(int bno) {
+		this.bno = bno;
 	}
 	public String getTitle() {
 		return title;

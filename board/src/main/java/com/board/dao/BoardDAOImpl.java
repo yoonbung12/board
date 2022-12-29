@@ -30,7 +30,7 @@ public class BoardDAOImpl implements BoardDAO {
 	private static String namespace = "com.board.mappers.board";
 	
 	
-	
+	// 게시물 목록
 	@Override
 	public List<BoardVO> list() throws Exception {
 		
