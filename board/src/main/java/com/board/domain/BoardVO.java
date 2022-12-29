@@ -18,8 +18,8 @@ public class BoardVO {
 	private String title;
 	private String content;
 	private String writer;
-	private Date regdate;
-	private int viewcnt;
+	private Date regDate;
+	private int viewCnt;
 	
 	
 	public int getBno() {
@@ -46,17 +46,17 @@ public class BoardVO {
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
-	public Date getRegdate() {
-		return regdate;
+	public Date getRegDate() {
+		return regDate;
 	}
-	public void setRegdate(Date regdate) {
-		this.regdate = regdate;
+	public void setRegdate(Date regDate) {
+		this.regDate = regDate;
 	}
-	public int getViewcnt() {
-		return viewcnt;
+	public int getViewCnt() {
+		return viewCnt;
 	}
-	public void setViewcnt(int viewcnt) {
-		this.viewcnt = viewcnt;
+	public void setViewCnt(int viewCnt) {
+		this.viewCnt = viewCnt;
 	}
 	
 	
