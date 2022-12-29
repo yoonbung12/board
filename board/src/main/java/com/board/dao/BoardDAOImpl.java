@@ -36,5 +36,8 @@ public class BoardDAOImpl implements BoardDAO {
 		
 		return sql.selectList(namespace + ".list");
 	}
+	
+	//게시물 작성
+	
 
 }

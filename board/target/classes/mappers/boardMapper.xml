@@ -11,6 +11,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		from board
 		
 	</select>
-	
-
+	<!-- 게시물 작성 -->
+	<insert id="write" parameterType = "com.board.domain.BoardVO">
+		insert into 
+			board(title, writer, content )
+			values(#{title}, #{writer}, #{content})
+			
+	</insert>
 </mapper>
