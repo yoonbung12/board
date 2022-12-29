@@ -33,5 +33,10 @@ public class BoardController {
 			model.addAttribute("list" , list);
 			
 	}
+	
+	@RequestMapping(value="/write", method = RequestMethod.GET)
+	public void getWrite(Model model)	throws Exception {
+		
+	}
 
 }
