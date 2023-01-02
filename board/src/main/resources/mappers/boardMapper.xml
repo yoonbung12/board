@@ -18,4 +18,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			values(#{title}, #{writer}, #{content})
 			
 	</insert>
+	
+	<!-- 게시물 조회 -->
+	<select id="view" parameterType = "int"  resultType = "com.board.domain.BoardVO">
+		select 
+			bno, title, writer, content, regDate, viewCnt
+		from 
+			board
+		where 
+			bno = #{bno}
+			
+	
+	</select>
+	
+	
+	
 </mapper>
