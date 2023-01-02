@@ -51,7 +51,7 @@ public class BoardController {
 		}
 		
 	//게시물 조회
-	@RequestMapping(value="/view", method = RequestMethod.GET)
+	@RequestMapping(value = "/view" , method = RequestMethod.GET)
 	public void getView(
 			
 				@RequestParam("bno") int bno,
@@ -61,6 +61,8 @@ public class BoardController {
 			) throws Exception {
 		
 		BoardVO vo = service.view(bno);
+//		모댈이 있는게 까먹고 안써서 안된건지 확인할것1/2 
+		model.addAttribute("view", vo);
 		
 	}
 

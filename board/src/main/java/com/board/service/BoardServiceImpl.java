@@ -21,7 +21,7 @@ public class BoardServiceImpl implements BoardService {
 		
 		return dao.list();
 	}
-
+	//게시물 작성
 	@Override
 	public void write(BoardVO vo) throws Exception {
 		
