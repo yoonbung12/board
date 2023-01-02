@@ -24,6 +24,9 @@
 			<!-- list 받아오기 -->
 			<c:forEach items = "${list}" var = "list">
 				<tr>
+					<td>
+						<a href = "/board/view?bno = ${list.bno}">${list.title }</a> 
+					</td>
 					<td>${list.bno}</td>
 					<td>${list.title }</td>
 					<td>${list.content }</td>					
