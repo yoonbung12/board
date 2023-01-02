@@ -13,7 +13,7 @@
 	        <tr>
 	            <th>번호</th>
 	            <th>제목</th>
-	            <th>내용</th>
+	            <!-- <th>내용</th> -->
 	            <th>작성자</th>
 	            <th>작성일</th>
 	            <th>조회수</th>
@@ -26,10 +26,10 @@
 				<tr>
 					<td>${list.bno}</td>
 					<td>
-						<a href = "/board/view?bno = ${list.bno}">${list.title }</a> 
+						<a href = "/board/view?bno=${list.bno}">${list.title }</a> 
 					</td>
 					<%-- <td>${list.title }</td> --%>
-					<td>${list.content }</td>					
+					<%-- <td>${list.content }</td> --%>					
 					<td>${list.writer }</td>
 					<td>${list.regDate }</td>
 					<td>${list.viewCnt }</td>
