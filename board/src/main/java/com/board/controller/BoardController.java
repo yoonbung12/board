@@ -67,8 +67,15 @@ public class BoardController {
 	}
 	//게시물 수정
 	@RequestMapping(value="/modify", method = RequestMethod.GET)
-	public void getModify() throws Exception{
+	public void getModify(
+			
+			@RequestParam("bno") int bno,
+			Model model
+			
+			) throws Exception{
 		
+			BoardVO vo = service.view(bno);
+			model.addAttribute("view", vo);
 	}
 
 }
