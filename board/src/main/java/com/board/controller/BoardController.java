@@ -77,5 +77,12 @@ public class BoardController {
 			BoardVO vo = service.view(bno);
 			model.addAttribute("view", vo);
 	}
-
+	//게시물 수정(post)설정도 추가할것
+	@RequestMapping(value= "/modify", method = RequestMethod.POST)
+	public String postModify(BoardVO vo) throws Exception {
+		
+		service.modify(vo);
+		return "redirect:/board/view?bno=" + vo.getBno();
+		
+	}
 }
