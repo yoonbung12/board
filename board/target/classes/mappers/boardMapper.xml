@@ -31,6 +31,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	</select>
 	
+	<!-- 게시물 수정 -->
+	<update id = "modify" parameterType= "com.board.domain.BoardVO">
+		update board
+			set
+				title = #{title},
+				content = #{content},
+				writer = #{writer}
+			where bno = #{bno}
+			
+	</update>
+	
 	
 	
 </mapper>
