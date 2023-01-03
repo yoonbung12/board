@@ -38,7 +38,7 @@
 					<%-- <td>${list.title }</td> --%>
 					<td>${list.content }</td>					
 					<td>${list.writer }</td>
-					<%-- <td>${list.regDate }</td>  날짜 데이터포맷으로 바꿈 --%>
+					<%-- <td>${list.regDate }</td>  날짜 데이터포맷으로(yyyy-mm-dd)로 보이 바꿈 --%>
 					<td>
 						<fmt:formatDate value = "${list.regDate}" pattern = "yyyy-MM-dd" />
 					</td>
