@@ -24,8 +24,10 @@
 	 <label>내용</label>
 	 ${view.content}<br />
 	 
-	 <div>
+	 <div>					<!-- 게시물 수정이랑 삭제 -->
 	 <a href = "/board/modify?bno=${view.bno}">게시물 수정</a>
+	 <a href = "/board/delete?bno=${view.bno}">게시물 삭제</a>
+	 
 	 </div>
 
 
