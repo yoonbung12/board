@@ -95,7 +95,7 @@ public class BoardController {
 			) throws Exception {
 				
 		service.delete(bno);
-		return "redict:/board/list";
+		return "redirect:/board/list";
 		
 	}
 }
