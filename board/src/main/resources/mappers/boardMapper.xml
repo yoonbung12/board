@@ -58,7 +58,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<!-- 게시물 목록 + 페이징 -->
-	<select id = "listPage" parameterType="com.board.domain.BoardVO">
+	<select id = "listPage" parameterType="hashMap" resultType="com.board.domain.BoardVO">
 		select 
 			bno, title, content, writer, regDate, viewCnt
 		from board
