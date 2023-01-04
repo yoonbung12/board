@@ -50,4 +50,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</delete>
 	
 	
+	<!-- 게시물 총갯수 -->
+	<select id = "count" resultType = "int">
+		select count(bno) 
+			from board
+			
+	</select>
+	
+	<!-- 게시물 목록 + 페이징 -->
+	<select id = "listPage" parameterType="com.board.domain.BoardVO">
+		select 
+			bno, title, content, writer, regDate, viewCnt
+		from board
+		order by bno desc
+			limit #{displayPost}, #{postNum}
+	</select>
+	
+	
 </mapper>
