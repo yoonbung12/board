@@ -66,6 +66,13 @@ public class BoardDAOImpl implements BoardDAO {
 		sql.delete(namespace + ".delete", bno);
 	}
 	
+	//게시물 총 갯수(페이징)
+	@Override
+	public int count() throws Exception {
+
+		return sql.selectOne(namespace + ".count");
+	}
+	
 	
 	
 
