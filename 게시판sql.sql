@@ -24,7 +24,17 @@ insert into board(title, content, writer)
 -- 게시판 데이터 확인
 select * from board;
 select bno, title, content, writer, regdate, viewcnt
+	from board
+    where bno=1;
+select bno, title, content, writer, regdate, viewcnt
 	from board;
+-- 게시판 데이터 limit으로 구분해서 보기( 0~ 10번째 보는방법은 0, 10을 써주면 됨)
+select bno, title, content, writer, regdate, viewcnt
+	from board
+    order by bno desc
+    limit 1;
+    
+ 
 -- 	-------------------------------------------
 -- 회원 테이블 만들기
 create table member(
