@@ -52,7 +52,22 @@
 		</tbody>
     </table>
     						<!-- 페이징 !!!! -->
+    						<!-- 페이징 (구간)숫자처리 하기 -->
     <div>
+    	<c:if test="${prev}">
+    		<span>[ <a href = "/board/listPage?num=${startPageNum - 1}"></a> ] </span>
+    	</c:if>
+    	<c:forEach begin = "${startPageNum}" end = "${endPageNum}" var = "num">
+    		<span>
+    			<a href = "/board/listPage?num=${num}">${num}</a>
+    		</span>
+    	</c:forEach>
+    	<c:if test="${next}">
+    		<span>[<a href = "board/listPage?num=${endPageNum + 1}">다음</a>]</span>
+    	</c:if>
+    	
+    
+    
     	<c:forEach begin="1" end="${pageNum}" var = "num">
     		<span>
     			<a href="/board/listPage?num=${num}">${num}</a> 
