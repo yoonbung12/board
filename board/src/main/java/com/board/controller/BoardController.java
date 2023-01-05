@@ -149,5 +149,8 @@ public class BoardController {
 		model.addAttribute("prev", prev);
 		model.addAttribute("next", next);
 		
+		//현재 페이지 
+		model.addAttribute("select", num);
+		
 	}
 }
