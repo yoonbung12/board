@@ -33,7 +33,10 @@ select bno, title, content, writer, regdate, viewcnt
 	from board
     order by bno desc
     limit 1;
-    
+select bno, title, content, writer, regdate, viewcnt
+		from  board
+        order by bno desc
+        limit 0, 5;
 select count(bno) from board;
     
  
