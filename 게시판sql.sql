@@ -34,6 +34,8 @@ select bno, title, content, writer, regdate, viewcnt
     order by bno desc
     limit 1;
     
+select count(bno) from board;
+    
  
 -- 	-------------------------------------------
 -- 회원 테이블 만들기

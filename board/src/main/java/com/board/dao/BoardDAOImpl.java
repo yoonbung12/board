@@ -83,7 +83,7 @@ public class BoardDAOImpl implements BoardDAO {
 		data.put("displayPost", displayPost);
 		data.put("postNum", postNum);
 		
-		return sql.selectList(namespace + "list.page", data);
+		return sql.selectList(namespace + ".listpage", data);
 	}
 	
 	

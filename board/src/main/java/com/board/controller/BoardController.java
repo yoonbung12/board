@@ -99,9 +99,9 @@ public class BoardController {
 		
 	}
 	
-	//게시물 목록 + 페이징
+	//게시물 목록 + 페이징추가
 	@RequestMapping(value = "/listPage", method = RequestMethod.GET)
-	public void getListPage(Model model, @RequestParam("num	") int num)throws Exception {
+	public void getListPage(Model model, @RequestParam("num") int num)throws Exception {
 		
 		//게시물 총갯수
 		int count = service.count();
@@ -109,11 +109,11 @@ public class BoardController {
 		//한페이지에 출력할 게시물 갯수
 		int postNum = 10;
 		
-		//하단 페이징 번호([게시물 총 갯수+ 한페이지에 출력할 갯수]의 올림)
+		//하단 페이징 번호([게시물 총 갯수+ 한페이지에 출력할 갯수]의 소수점은 올림)
 		int pageNum = (int)Math.ceil((double)count/postNum);
 		
 		//출력할 게시물
-		int displayPost = (num -1) * postNum;
+		int displayPost = (num - 1) * postNum;
 		
 		List<BoardVO> list = null;
 		list = service.listPage(displayPost, postNum);
