@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.board.domain.BoardVO;
+import com.board.domain.Page;
 import com.board.service.BoardService;
 
 @Controller
@@ -103,54 +104,77 @@ public class BoardController {
 	@RequestMapping(value = "/listPage", method = RequestMethod.GET)
 	public void getListPage(Model model, @RequestParam("num") int num)throws Exception {
 		
-		//게시물 총갯수
-		int count = service.count();
+		Page page = new Page();
 		
-		//한페이지에 출력할 게시물 갯수
-		int postNum = 10;
-		
-		//하단 페이징 번호([게시물 총 갯수+ 한페이지에 출력할 갯수]의 소수점은 올림)
-		int pageNum = (int)Math.ceil((double)count/postNum);
-		
-		//출력할 게시물
-		int displayPost = (num - 1) * postNum;
-		
-		//한번에 표시할 페이징번호의 갯수
-		int pageNum_cnt = 10;
-		
-		//표시되는 페이지 번호중 마지막 번호
-		int endPageNum = (int)(Math.ceil((double)num / (double)pageNum_cnt) * pageNum_cnt);
-		
-		//표시되는 페이지 번호중 첫번째 번호
-		int startPageNum = endPageNum - (pageNum_cnt - 1);
-		
-		//마지막 페이지 번호 = ((올림)(현재 페이지 번호 / 한번에 표시할 페이지 번호의 갯수)) * 한번에 표시할 페이지 번호의 갯수
-		//마지막 번호 재계산
-		int endPageNum_tmp = (int)(Math.ceil((double)count  /  (double)pageNum_cnt));
-		
-		if(endPageNum > endPageNum_tmp) {
-			endPageNum = endPageNum_tmp;
-		}
-		
-		boolean prev = startPageNum == 1 ? false : true;
-		boolean next = endPageNum * pageNum_cnt >= count ? false : true;
-		
-		
+		page.setNum(num);
+		page.setCount(service.count());
+
 		List<BoardVO> list = null;
-		list = service.listPage(displayPost, postNum);
+		list = service.listPage(page.getDisplayPost(), page.getPostNum() );
+		
 		model.addAttribute("list", list);
-		model.addAttribute("pageNum", pageNum);
+		//이부분은 page의 데이터다 그래서 삭제해도 상관없는 부분
+//		model.addAttribute("pageNum", page.getPageNum());
+//		
+//		model.addAttribute("startPageNum", page.getStartPageNum());
+//		model.addAttribute("endPageNum", page.getEndPageNum());
+//		
+//		model.addAttribute("prev", page.getPrev());
+//		model.addAttribute("next", page.getNext());
 		
-		//시작 및 끝 번호
-		model.addAttribute("startPageNum", startPageNum);
-		model.addAttribute("endPageNum", endPageNum);
-		
-		//이전 및 다음
-		model.addAttribute("prev", prev);
-		model.addAttribute("next", next);
-		
-		//현재 페이지 
+		model.addAttribute("page", page);
 		model.addAttribute("select", num);
 		
+		// -----------------------------------------
+		//class에서 처리해서 주석 처리해놨음
+//		//게시물 총갯수
+//		int count = service.count();
+//		
+//		//한페이지에 출력할 게시물 갯수
+//		int postNum = 10;
+//		
+//		//하단 페이징 번호([게시물 총 갯수+ 한페이지에 출력할 갯수]의 소수점은 올림)
+//		int pageNum = (int)Math.ceil((double)count/postNum);
+//		
+//		//출력할 게시물
+//		int displayPost = (num - 1) * postNum;
+//		
+//		//한번에 표시할 페이징번호의 갯수
+//		int pageNum_cnt = 10;
+//		
+//		//표시되는 페이지 번호중 마지막 번호
+//		int endPageNum = (int)(Math.ceil((double)num / (double)pageNum_cnt) * pageNum_cnt);
+//		
+//		//표시되는 페이지 번호중 첫번째 번호
+//		int startPageNum = endPageNum - (pageNum_cnt - 1);
+//		
+//		//마지막 페이지 번호 = ((올림)(현재 페이지 번호 / 한번에 표시할 페이지 번호의 갯수)) * 한번에 표시할 페이지 번호의 갯수
+//		//마지막 번호 재계산
+//		int endPageNum_tmp = (int)(Math.ceil((double)count  /  (double)pageNum_cnt));
+//		
+//		if(endPageNum > endPageNum_tmp) {
+//			endPageNum = endPageNum_tmp;
+//		}
+//		
+//		boolean prev = startPageNum == 1 ? false : true;
+//		boolean next = endPageNum * pageNum_cnt >= count ? false : true;
+//		
+//		
+//		List<BoardVO> list = null;
+//		list = service.listPage(displayPost, postNum);
+//		model.addAttribute("list", list);
+//		model.addAttribute("pageNum", pageNum);
+//		
+//		//시작 및 끝 번호
+//		model.addAttribute("startPageNum", startPageNum);
+//		model.addAttribute("endPageNum", endPageNum);
+//		
+//		//이전 및 다음
+//		model.addAttribute("prev", prev);
+//		model.addAttribute("next", next);
+//		
+//		//현재 페이지 
+//		model.addAttribute("select", num);
+//		
 	}
 }
