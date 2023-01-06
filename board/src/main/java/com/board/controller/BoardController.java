@@ -113,6 +113,8 @@ public class BoardController {
 		list = service.listPage(page.getDisplayPost(), page.getPostNum() );
 		
 		model.addAttribute("list", list);
+		
+		
 		//이부분은 page의 데이터다 그래서 삭제해도 상관없는 부분
 //		model.addAttribute("pageNum", page.getPageNum());
 //		

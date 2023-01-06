@@ -32,6 +32,9 @@ public class Page {
 	
 	public void setNum(int num) {
 		 this.num = num;
+		 
+		 dataCalc();
+		 
 		}
 
 		public void setCount(int count) {
