@@ -179,4 +179,21 @@ public class BoardController {
 //		model.addAttribute("select", num);
 //		
 	}
+	//게시물 목록 + 페이징추가
+	@RequestMapping(value = "/listPageSearch", method = RequestMethod.GET)
+	public void getListPageSearch(Model model, @RequestParam("num") int num)throws Exception {
+		
+		Page page = new Page();
+		
+		page.setNum(num);
+		page.setCount(service.count());
+
+		List<BoardVO> list = null;
+		list = service.listPage(page.getDisplayPost(), page.getPostNum() );
+		
+		model.addAttribute("list", list);
+		model.addAttribute("page", page);
+		model.addAttribute("select", num);
+	
+	}
 }

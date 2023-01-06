@@ -79,6 +79,21 @@
     			<a href="/board/listPage?num=${num}">${num}</a> 
     		</span>
     	</c:forEach> --%>
+    	
+    				<!--  검색 구현 -->  -->
+    	<div>
+    		<select name = "searchType">
+    			<option value = "title">제목</option>
+    			<option value = "content">내용</option>    		
+       			<option value = "title_content">제목 + 내용</option>
+       			<option value = "writer">작성자</option>    			 				
+    		</select>
+    	</div>
+    	
+    	<input type="text" name = "keyword">
+    	
+    	<button type="button">검색</button>
+    	
     
     </div>
     
