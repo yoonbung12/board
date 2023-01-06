@@ -33,12 +33,13 @@ public class Page {
 	public void setNum(int num) {
 		 this.num = num;
 		 
-		 dataCalc();
-		 
 		}
 
 		public void setCount(int count) {
 		 this.count = count;
+		 
+		 //페이지 하단의 역할
+		 dataCalc();		 
 		}
 
 		public int getCount() {
@@ -95,8 +96,6 @@ public class Page {
 			next = endPageNum * pageNumCnt >= count ? false : true;
 			
 			displayPost = (num - 1) * postNum;
-			
-			
 			
 			
 			
