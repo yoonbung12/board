@@ -127,7 +127,7 @@ public class BoardController {
 		model.addAttribute("page", page);
 		model.addAttribute("select", num);
 		
-		// -----------------------------------------
+		// ----------------------------------------- *******************************
 		//class에서 처리해서 주석 처리해놨음
 //		//게시물 총갯수
 //		int count = service.count();
@@ -179,9 +179,16 @@ public class BoardController {
 //		model.addAttribute("select", num);
 //		
 	}
-	//게시물 목록 + 페이징추가
+	//게시물 목록 + 페이징추가 + 검색
 	@RequestMapping(value = "/listPageSearch", method = RequestMethod.GET)
-	public void getListPageSearch(Model model, @RequestParam("num") int num)throws Exception {
+	public void getListPageSearch(Model model, 
+			
+			@RequestParam("num") int num,
+			@RequestParam(value = "searchType", required = false, defaultValue = "title") String searchType,
+			@RequestParam( value="keyword", required = false, defaultValue = "") String keyword
+			
+			)throws Exception {
+
 		
 		Page page = new Page();
 		
@@ -189,11 +196,15 @@ public class BoardController {
 		page.setCount(service.count());
 
 		List<BoardVO> list = null;
-		list = service.listPage(page.getDisplayPost(), page.getPostNum() );
+		//list = service.listPage(page.getDisplayPost(), page.getPostNum() );
+		list = service.listPageSearch(page.getDisplayPost(), page.getPostNum(), searchType, keyword);
 		
 		model.addAttribute("list", list);
 		model.addAttribute("page", page);
 		model.addAttribute("select", num);
 	
-	}
+	}	
+	
+	
+	
 }

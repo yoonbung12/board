@@ -81,9 +81,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where title LIKE concat ('%', #{keyword}, '%')		
 			or content LIKE concat('%', #{keyword}, '%')
 		</if>
-		
+		<if test='searchType.equals("writer")'>
 		where writer LIKE concat ('%', #{keyword}, '%')		
-		
+		</if>
 		order by bno desc
 			limit #{displayPost}, #{postNum}
 	
