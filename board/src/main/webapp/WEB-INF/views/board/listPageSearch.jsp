@@ -92,10 +92,29 @@
     	
     	<input type="text" name = "keyword">
     	
-    	<button type="button">검색</button>
+    	<button type="button" id="searchBtn">검색</button>
     	
     
     </div>
+    <!-- 검색 button event -->
+    <script>
+ 
+    	document.getElementById("searchBtn").onclick = function() {
+    		let searchType = document.getElementByName("searchType")[0].value;
+    		let keyword = documnent.getElementByname("keyword")[0].value;
+    		
+    		console.log(searchType)
+    		console.log(keyword)
+    	}
+    
+    /* jquery 방법도 생각해볼것 */
+    	/* $(document).ready(){
+    		$(searchBtn).click(function) {
+    			
+    		}
+    	} */
+    
+    </script>
     
     
 </body>
