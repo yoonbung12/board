@@ -197,6 +197,11 @@ public class BoardController {
 		//page.setCount(service.count());
 		page.setCount(service.searchCount(searchType, keyword));
 		
+		//검색 타입과 검색어
+		//page.setSearchTypeKeyword(searchType, keyword);
+		page.setSearchType(searchType);
+		page.setKeyword(keyword);
+		
 
 
 
@@ -208,8 +213,8 @@ public class BoardController {
 		model.addAttribute("page", page);
 		model.addAttribute("select", num);
 		
-		model.addAttribute("searchType", searchType);
-		model.addAttribute("keyword", keyword);
+		//model.addAttribute("searchType", searchType);
+		//model.addAttribute("keyword", keyword);
 	
 	}	
 	
