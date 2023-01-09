@@ -51,11 +51,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	<!-- 게시물 총갯수  -->
-	<!-- <select id = "count" resultType = "int">
+	<select id = "count" resultType = "int">
 		select count(bno) 
 			from board
 			
-	</select> -->
+	</select>
 	
 	<!-- 게시물 목록 + 페이징 -->
 	<select id = "listPage" parameterType="hashMap" resultType="com.board.domain.BoardVO">
@@ -91,7 +91,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<!-- 게시물 총갯수 + 검색적용 -->
-	<select id = "searchCount" parameterType="hashMap" resultType="int">
+	<select id ="searchCount" parameterType="hashMap" resultType="int">
 		select count(bno) from board
 		
 		<if test='searchType.equals("title")'>

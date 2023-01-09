@@ -207,6 +207,9 @@ public class BoardController {
 		model.addAttribute("list", list);
 		model.addAttribute("page", page);
 		model.addAttribute("select", num);
+		
+		model.addAttribute("searchType", searchType);
+		model.addAttribute("keyword", keyword);
 	
 	}	
 	
