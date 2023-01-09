@@ -192,7 +192,8 @@ public class BoardController {
 		
 		Page page = new Page();
 		//페이징을 만들때 가져오는 게시물의 갯수
-		page.setCount(service.count());
+//		page.setCount(service.count());
+		page.setCount(service.searchCount(searchType, keyword));
 		
 		page.setNum(num);
 		page.setCount(service.count());
