@@ -50,7 +50,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</delete>
 	
 	
-	<!-- 게시물 총갯수 -->
+	<!-- 게시물 총갯수  -->
 	<select id = "count" resultType = "int">
 		select count(bno) 
 			from board
@@ -88,6 +88,28 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			limit #{displayPost}, #{postNum}
 	
 	
+	</select>
+	
+	<!-- 게시물 총갯수 + 검색적용 -->
+	<select id = "searchCount" parameterType="hashMap" resultType="int">
+		select count(bno) from board
+		
+		<if test='searchType.equals("title")'>
+			where title LIKE concat('%', #{keyword}, '%')
+		</if>
+
+		<if test='searchType.equals("content")'>
+			where content LIKE concat('%', #{keyword}, '%')
+		</if>
+
+		<if test='searchType.equals("title_content")'>
+			where title LIKE concat('%', #{keyword}, '%')
+				or content LIKE concat('%', #{keyword}, '%')
+		</if>		
+
+		<if test='searchType.equals("writer")'>
+			where writer LIKE concat('%', #{keyword}, '%')
+		</if>			
 	</select>
 	
 </mapper>

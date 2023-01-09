@@ -37,6 +37,7 @@ select bno, title, content, writer, regdate, viewcnt
 		from  board
         order by bno desc
         limit 0, 5;
+-- 게시물 총 갯수 
 select count(bno) from board;
     
  
