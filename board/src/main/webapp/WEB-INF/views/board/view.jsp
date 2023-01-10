@@ -29,7 +29,30 @@
 	 <a href = "/board/delete?bno=${view.bno}">게시물 삭제</a>
 	 
 	 </div>
-
+	 
+	 <!-- 댓글 시작 -->
+	 
+	 <hr />
+	 
+	 <ul>
+	 	<li>첫번째 댓글</li>
+	 	<li>두번째 댓글</li>
+	 	<li>세번째 댓글</li>
+	 </ul>	
+	 <div>
+	 	<p>
+	 		<label>댓글 작성자</label> <input type="text">
+	 	</p>
+	 	<p>
+	 		<textarea rows="5" cols="50"></textarea>
+	 	</p>
+	 	<p>
+	 		<button type="button">댓글 작성</button>
+	 	</p>
+	 </div>
+	 
+	 
+	 <!-- 댓글 종료 -->
 
  
  
