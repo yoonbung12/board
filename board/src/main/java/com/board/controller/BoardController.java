@@ -185,7 +185,7 @@ public class BoardController {
 			
 			@RequestParam("num") int num,
 			@RequestParam(value = "searchType", required = false, defaultValue = "title") String searchType,
-			@RequestParam( value="keyword", required = false, defaultValue = "") String keyword
+			@RequestParam( value= "keyword", required = false, defaultValue = "") String keyword
 			
 			)throws Exception {
 

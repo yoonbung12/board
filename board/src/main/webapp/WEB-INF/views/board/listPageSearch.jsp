@@ -90,7 +90,7 @@
     		</select>
     	
     	
-    		<input type="text" name = "keyword" value="${page.keyword}">
+    		<input type="text" name ="keyword" value="${page.keyword}">
     	
     		<button type="button" id="searchBtn">검색</button>
     	</div>
@@ -106,8 +106,8 @@
     		
     		console.log(searchType)
     		console.log(keyword)
-    		
-    		location.href = "/board/listPageSearch?num=1" +"&searchType=" + searchType + "&keyword" + keyword;
+    																			/* =을 빼먹어서 이동을 못한거였음 */
+    		location.href = "/board/listPageSearch?num=1" +"&searchType=" + searchType + "&keyword=" + keyword;
     		
     	};
     
