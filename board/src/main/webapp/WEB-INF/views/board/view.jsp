@@ -35,10 +35,27 @@
 	 <hr />
 	 
 	 <ul>
-	 	<li>첫번째 댓글</li>
-	 	<li>두번째 댓글</li>
-	 	<li>세번째 댓글</li>
+	 	<li>
+	 		<div>
+	 			<P>첫번째 댓글 작성자</P>
+	 			<p>첫번째 댓글</p>
+	 		</div>
+	 	</li>	 
+	 	<li>
+	 		<div>
+	 			<P>두번째 댓글 작성자</P>
+	 			<p>두번째 댓글</p>
+	 		</div>
+	 	</li>	 	
+	 	<li>
+	 		<div>
+	 			<P>세번째 댓글 작성자</P>
+	 			<p>세번째 댓글</p>
+	 		</div>
+	 	</li>	 	
+	 	
 	 </ul>	
+	 
 	 <div>
 	 	<p>
 	 		<label>댓글 작성자</label> <input type="text">

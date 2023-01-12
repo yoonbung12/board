@@ -60,4 +60,37 @@ insert into member(midx,  pw, mname, memail, phone)
 -- 회원 데이터 확인
 select * from member;
 
+-- 댓글 테이블 생성
+create table reply(
+	rno int not null auto_increment,
+    bno int not null,
+    writer varchar(30) not null,
+    content text not null,
+    regdate timestamp not null default now(),
+    primary key(rno, bno),
+    foreign key(bno) references board(bno)
+    );
+-- -------------------------------------------------------    
+-- 댓글 테이블 확인
+select * from reply;
+select  rno, bno, writer, content, regdate
+	from reply
+		where rno = 2;
+
+-- 댓글 테이블 데이터 입력
+insert into reply(bno, writer, content, regdate)
+	values(3, '댓글 작성자', '하하하하하하', sysdate());
+
+-- 댓글 update
+update reply set
+	writer = '댓 글 작 성 자 수정',
+    content = 'zzzzzzz' 
+where rno =1
+	and bno = 3;
+    
+-- 댓글 삭제!!!!!
+delete from reply
+	where rno = 1
+		and bno = 3;
+
 commit;
