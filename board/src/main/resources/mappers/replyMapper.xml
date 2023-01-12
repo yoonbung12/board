@@ -29,5 +29,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			where rno = #{rno}
 				and bno = #{bno}
 	</update>
+	
+	<!-- 댓글 삭제 -->
+	<delete id="replyDelete" parameterType="com.board.domain.ReplyVO">
+		delte from reply
+			where rno = #{rno}
+				and bno = #{bno}
+	</delete>
+	
 
 </mapper>
