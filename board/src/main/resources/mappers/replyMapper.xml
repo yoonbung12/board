@@ -34,7 +34,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="replyDelete" parameterType="com.board.domain.ReplyVO">
 		delte from reply
 			where rno = #{rno}
-				and bno = #{bno}
+				and bno = ${bno}
 	</delete>
 	
 
