@@ -1,3 +1,5 @@
+<!-- c:forEach를 쓰는 데 jstl 추가 안하고써서 오류가 뜬것 -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -37,7 +39,7 @@
 	 <hr />
 	 
 	 <ul>
-	 	 <li>
+	 	 <!-- <li>
 	 		<div>
 	 			<P>첫번째 댓글 작성자</P>
 	 			<p>첫번째 댓글</p>
@@ -54,16 +56,17 @@
 	 			<P>세번째 댓글 작성자</P>
 	 			<p>세번째 댓글</p>
 	 		</div>
-	 	</li> 
-
-		<%-- <c:forEach items="${reply}" var="reply">
-		<li>
-			<div>
-				<p>${reply.writer} / ${reply.regDate}</p>
-				<p>${reply.content}</p>				
-			</div>
-		</li>	
-		</c:forEach> --%>
+	 	</li>  -->
+		
+		
+		<c:forEach items="${reply}" var="reply">
+			<li>
+				<div>
+					<p>${reply.writer} / ${reply.regDate}</p>
+					<p>${reply.content}</p>				
+				</div>
+			</li>	
+		</c:forEach>
 	 	
 	 </ul>	
 	 
