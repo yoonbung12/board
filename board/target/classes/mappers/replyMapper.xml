@@ -17,7 +17,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 댓글 작성 -->
 	<insert id="replyWrite" parameterType="com.board.domain.ReplyVO" >
 		insert into reply(bno, writer, content, regDate)
-			values(#{bno}, #{writer}, #{content}, #{regDate})	
+			value(#{bno}, #{writer}, #{content}, #{regDate})	
 	</insert>
 
 	<!-- 댓글 수정 -->

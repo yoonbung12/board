@@ -61,8 +61,8 @@
 		
 		<c:forEach items="${reply}" var="reply">
 			<li>
-				<div>
-					<p>${reply.writer} / ${reply.regDate}</p>
+				<div>								
+					<p>${reply.writer} / <fmt:formatDate value="${reply.regDate}" pattern="yyyy-MM-dd" /></p>
 					<p>${reply.content}</p>				
 				</div>
 			</li>	
@@ -71,15 +71,19 @@
 	 </ul>	
 	 
 	 <div>
-	 	<p>
-	 		<label>댓글 작성자</label> <input type="text">
-	 	</p>
-	 	<p>
-	 		<textarea rows="5" cols="50"></textarea>
-	 	</p>
-	 	<p>
-	 		<button type="button">댓글 작성</button>
-	 	</p>
+	 
+		<form method="post" action="/reply/write">
+		 	<p>
+		 		<label>댓글 작성자</label> <input type="text" name="writer">
+		 	</p>
+		 	<p>
+		 		<textarea rows="5" cols="50" name="content"></textarea>
+		 	</p>
+		 	<p>
+		 		<input type="hidden" name="bno" value="${view.bno}">
+		 		<button type="submit">댓글 작성</button>
+		 	</p>
+		</form>	
 	 </div>
 	 
 	 
