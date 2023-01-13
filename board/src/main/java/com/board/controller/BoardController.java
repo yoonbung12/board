@@ -14,7 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.board.domain.BoardVO;
 import com.board.domain.Page;
 import com.board.domain.ReplyVO;
+//import com.board.domain.ReplyVO;
 import com.board.service.BoardService;
+//import com.board.service.ReplyService;
+import com.board.service.ReplyService;
 
 
 @Controller
@@ -28,8 +31,8 @@ public class BoardController {
 	@Inject
 	private BoardService service;
 	
-//	@Inject
-//	private ReplyService replyService;
+	@Inject
+	private ReplyService replyService;
 	
 	//게시물 목록
 	@RequestMapping(value="/list", method=RequestMethod.GET)
@@ -70,11 +73,11 @@ public class BoardController {
 //		모댈이 있는게 까먹고 안써서 안된건지 확인할것1/2 
 		model.addAttribute("view", vo);
 		
-			/* 댓글에 대한 내용 */
+	
 		//댓글 조회
-//		List<ReplyVO> reply = null;
-//		reply = replyService.list(bno);
-//		model.addAttribute("reply", reply);
+		List<ReplyVO> reply = null;
+		reply = replyService.list(bno);
+		model.addAttribute("reply", reply);
 		
 		
 	}

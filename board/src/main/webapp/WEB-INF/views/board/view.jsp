@@ -54,15 +54,16 @@
 	 			<P>세번째 댓글 작성자</P>
 	 			<p>세번째 댓글</p>
 	 		</div>
-	 	</li> 	
-<%-- 	 	<c:forEach items ="${reply}" var="reply">
-	 		<li>
-		 		<div>
-		 			<p>${reply.writer} / ${reply.regDate }</p>
-		 			<p>${reply.content}</p>
-		 		</div>
-		 	</li>	 	
-	 	</c:forEach> --%>
+	 	</li> 
+
+		<%-- <c:forEach items="${reply}" var="reply">
+		<li>
+			<div>
+				<p>${reply.writer} / ${reply.regDate}</p>
+				<p>${reply.content}</p>				
+			</div>
+		</li>	
+		</c:forEach> --%>
 	 	
 	 </ul>	
 	 
