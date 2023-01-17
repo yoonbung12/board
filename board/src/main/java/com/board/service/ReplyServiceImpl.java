@@ -44,4 +44,11 @@ public class ReplyServiceImpl implements ReplyService {
 		
 	}
 
+	//단일 댓글 조회
+	@Override
+	public ReplyVO replySelect(ReplyVO vo) throws Exception {
+
+		return dao.replySelect(vo);
+	}
+
 }
