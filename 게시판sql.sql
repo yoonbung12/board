@@ -66,14 +66,14 @@ create table reply(
     bno int not null,
     writer varchar(30) not null,
     content text not null,
-    regdate timestamp not null default now(),
+    regDate timestamp not null default now(),
     primary key(rno, bno),
     foreign key(bno) references board(bno)
     );
 -- -------------------------------------------------------    
 -- 댓글 테이블 확인
 select * from reply;
-select  rno, bno, writer, content, regdate
+select  rno, bno, writer, content, regDate
 	from reply
 		where rno = 2;
 
@@ -92,5 +92,5 @@ where rno =1
 delete from reply
 	where rno = 1
 		and bno = 3;
-
+drop table reply;
 commit;

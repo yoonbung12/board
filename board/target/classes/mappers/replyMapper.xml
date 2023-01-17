@@ -15,9 +15,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<!-- 댓글 작성 -->
+	<!-- regDate는 mysql에서 디폴트 값으로 현재 시간이 설정되어 있고 따로 설정하는 코드가 없기 때문에 mapper에서 해당 부분은 지워 주어야 500 오류가 뜨지 않습니다. -->
 	<insert id="replyWrite" parameterType="com.board.domain.ReplyVO" >
-		insert into reply(bno, writer, content, regDate)
-			value(#{bno}, #{writer}, #{content}, #{regDate})	
+		insert into reply(bno, writer, content)
+			value(#{bno}, #{writer}, #{content} )	
 	</insert>
 
 	<!-- 댓글 수정 -->

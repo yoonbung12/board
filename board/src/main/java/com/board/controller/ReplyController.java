@@ -22,15 +22,18 @@ public class ReplyController {
 	private ReplyService replyService;
 	
 	//댓글 조회
-	@RequestMapping(value= "/write", method = RequestMethod.GET)
+
+	//댓글 작성	
+	@RequestMapping(value= "/write", method = RequestMethod.POST)
 	public String posttWrite(ReplyVO vo) throws Exception{
 		
 		replyService.write(vo);
+		
 		return "redirect:/board/view?bno=" + vo.getBno();
 		
 	}
 	
-	//댓글 작성
+
 	
 	//댓글 수정
 	
