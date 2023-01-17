@@ -49,4 +49,11 @@ public class ReplyDAOImpl implements ReplyDAO {
 		
 	}
 
+	//단일 댓글 조회
+	@Override
+	public ReplyVO replySelect(ReplyVO vo) throws Exception {
+
+		return sql.selectOne(namespace + ".replySelect", vo);
+	}
+
 }
