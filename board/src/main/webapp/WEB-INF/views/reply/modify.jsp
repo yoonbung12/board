@@ -25,6 +25,7 @@
 		 	<p>
 		 		<input type="hidden" name="bno" value="${reply.bno}">
 		 		<input type="hidden" name="rno" value="${reply.rno }">
+		 		
 		 		<button type="submit">댓글 수정</button>
 		 	</p>
 		</form>	
